@@ -1,0 +1,33 @@
+from os import environ
+
+from revChatGPT.revChatGPT import Chatbot
+
+EMAIL = "theeverythinapp@gmail.com"
+PASSWORD = "1996919Gl"
+SESSION_TOKEN = "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..Np1fTG49GRTykGvY.Y2-gxlhmdHi8akwD1uoCwMwR9tnKnsFAP9HCiDRGeSz0I3IjrMsIxfKtbzRFrCOeSqPn3Gle_s9E2bkxzEBAuo_GtTkJ5qN68RMuRf-hzNJPTAX_pWeaLT0pZGFZYIvdSJXCa1e2WRoa2apJF-m66i6XYkY5eCNlPUnMBGuJD7vRDTbCDWu_5njMV-fU8JOUJxpDQVxCrZeakDpTtgyjk-vHmWfwcGNUZyeODqds0M5oq0zN5MYwWP73LQSd8mmKSCI2IacowizdcEauaLAxZiW-Sb4Zb9QntbTo2t--8HnGM6IkslbzctxUVuR3U1a5qcCsfI5Ei61N7ttsNbZstzeHY9y6wBdx31e3lzTSAPmzo7TWgYVwJ_7s9Hie7DaNQIIqQ3Z_ppicnEz2JYoDz5Sun5l8RRUfnX_zHwnulY9F_o2pZaXTZw-RPYt2VCYtRwdQQ4dHAF84whogodtnFViWQMOEpoqe3-Ma421RHuJYp2w4QJjtSUeebsfqGLg4ADCdzKHLnIc-W7u4-2XD64uNWkOzRlsvXKFO0aJFzZKqZwRqNKkezQrbVgXfORzebIhQiDVpULlkXroRd9g-zlo0QZxf9gJm8H9hT3cjHJn-FEy3a5gZveCabN1jflf0B9P1RJFQ_KQsJ5jG93WvpLdtb08hTURW4shL87muDgVx7flbVdPV-nnS6GTtt8tce3gP6b5MtR0KjzbWYdSPoT1aqYiCtHsPlnkfvfsvlFdvQcHCDtVWVBJWUlVCXQkjUbRCginqkUgmWEUsz4wqESpUocvt_zJN0zstnjxStlX86agAclBqDc1lWhM1rJBwAOW5IK26Q6wN3f3OcNVv6zp9rV0RlgY-A2MqUpHXSvQ9iaAgSjFJpV-mngYYLD1M9RtzJKyEhbJrsW2otBM06deKwdVfzXBpvlbVWyWpltROLDu909_AEcOg65ZjsawlI_Q9yeK6Kj8EosOYXGPQr_-Jv6sK0QKfhkkB_T_VX3mhCdAuq1_vm-QJ1XUs6EuDkFaOA4OiwHDn57S-WfnbFwl0UPSLkClSeo3jwL0GVtB2zO26sAvTfZChLciV3BJMpQ0GDBG_PT3QQ2aSnc2UfwwcwZco5_Qb2XdTwDWsjRkJeSmpkCMSee3g98XR10gwRCpP1b4TWdQwJ9ZgC2RsC_xgxg000tDlKENrqfO5-hwhxoEKqsNQw11QbtU3HbAh6sREkPr8Tf8iAXcT8aIBHhurJYHsOm5AVy2GG6vMieDfvqfTutf9ZM-zaGIqFku3zGge8BdTzqWrXBNjSgPWOzHZxtbABVw5FcS-QukPM7vwUGroeCxyADKBdWTMBU4PhIT8BAnMHY9WFdaQKKYhvFwQXPqdR6Cu4-yyN4iWIIWEWOx7RL9t0HR1sMOGhYcb6I1GmIurJJgTclvOvojypHZWIqPuYHyShO3wVyrbOAHIXgIypEhSONOwpzHkb05d300GTo8VSQsl1BbYTbyV03_ZOu_xfOB6VFv8teDNS3pUKerxniU6O0kG4Mis4wvY5zWv_2OebCD9A6wBG4F9B78pZsjuCswPjhJWTTIlIAXH9Wgp5fpIXFR4WzAhXfMhq3j2KJuT3ebkXCccEWE3hSyJ92sIDHd9K9oapmZjQztnpiWv0bDLkdYh1GaWdRPlpLvWkWSwAEgaGou9-KS9DqrN56nzCMbm8p_fCuhIJEQMn9yg-r8jkKl0Jk3n1k_rFuTk3AsidbC-lsCXtodPstS2zDgMxN6OqvuXUkx5Wf9Gskb98COdR5OTijhjkoMdJ7DEnvFzJcMtABtqud2m438gtH1M_UzSHHpLkeAFk5g_CYlD_2sknPqVwYzz9WOz7pgsp8p0iG20hD2rZGlRP0tq3Q6nIWtKhrPwwoARbqPBs8Vb42E5N0kRXovkCD3cvX-2Ha0A3VO_J5KFLWprAlYeaIMK8PDVp4XZWO3kaKxiyX41VCXbOUW8H3dMtnZ1vvnTD5hE23jZmKlR51nh7OHlWF8goZB66Ko-890xBcYi5hV4eqIPmI6RbKirjUW_30H3cKV2EUyYhU4z_brDfRr-xI97-3keLs56dp9xi7QJ3DiQIkUtRiSWeYLms_aAfRbYKlrZ8ISJbYEFqpr7jreLtCQ-ewKYhAMyP0AmR1dIKPHvxFhvC5J5vmJZjrFYlGPi_LhXFMkFFXdXe17zXMA-YCn2Lywd2Dw0cG49dYzckuG6melX8IkwkSYyRCezpZh0dP-4zLp9OHBbXWI2i2w1ov6Yp3lkUnBemrtrx7EesvxrsEONVnxcBFN8d6XP-K9zIEaacEEv7RHrLSQcLYxSiRzHAGEPc-OvbBiiYFdhGAfh4OBAva0AQBicBTIY7qs-.uREHMievqp7pvvoHqCQGqQ"
+config = {
+    "email": EMAIL,
+    "password": PASSWORD, 
+    "session_token":SESSION_TOKEN,
+    }
+
+try:
+    bot = Chatbot(config=config, debug=True)
+    bot.refresh_session()
+except Exception as exc:
+        print(f"Error: {exc}")
+        assert False
+
+print("Starting conversation, please type in your commands:")
+while True:
+    prompt = input("Me:")
+    if prompt == "exit":
+        print("your conversation has ended.")
+        break
+    response = bot.get_chat_response(prompt)
+    if response['message'] is None:
+        print("Error: response['message'] is None")
+        assert False
+    else:
+        print(f"chatgpt: {response['message']}")
+    
