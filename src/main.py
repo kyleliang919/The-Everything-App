@@ -1,7 +1,7 @@
 import yaml
 import argparse
-from revChatGPT.revChatGPT import Chatbot
-from apps import parse_and_execute, detect_code
+from bot import Chatbot
+from controller import parse_and_execute
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--yaml")
@@ -18,8 +18,7 @@ def main():
     credentials = load_yaml(args.yaml)
     # start connection with openAI chatgpt, once official API is here, should be replaced.
     try:
-        bot = Chatbot(config=credentials["chatgpt"], debug=True)
-        bot.refresh_session()
+        bot = Chatbot()
     except Exception as exc:
             print(f"Error: {exc}")
             assert False
@@ -36,13 +35,17 @@ def main():
                 print("Error: response['message'] is None")
                 assert False
             else:
-                code_gen = detect_code(response['message'])
+                code_gen = response['code_gen']
                 if code_gen is not None:
-                    execute_or_not = input("chatgpt: code generation detected, do you want to execute?")
+                    execute_or_not = input("chatgpt: code generation detected, do you want to execute?(yes/no)")
                     if execute_or_not == "yes":
-                        parse_and_execute(code_gen, credentials, bot)
+                        success = parse_and_execute(code_gen, credentials, bot)
+                        if success:
+                            print(f"chatgpt: execution succeeded, please check the app for results")
+                        else:
+                            print(f"chatgpt: execution failed, please try a different prompt") 
                     else:
-                        print(f"chatgpt: no code has been executed.")
+                        print(f"chatgpt: no code has been executed, continue on the coversation.")
                 else:
                     print(f"chatgpt: {response['message']}")
 
