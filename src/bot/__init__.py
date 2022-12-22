@@ -1,1 +1,1 @@
-from .bot import Chatbot
+from .chatbot import Chatbot

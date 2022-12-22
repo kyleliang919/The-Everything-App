@@ -2,6 +2,7 @@ import yaml
 import argparse
 from bot import Chatbot
 from controller import parse_and_execute
+import warnings
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--yaml")
@@ -32,8 +33,7 @@ def main():
         else:
             response = bot.get_chat_response(prompt)
             if response['message'] is None:
-                print("Error: response['message'] is None")
-                assert False
+                warnings.warn(f"Error: {response['message']}")
             else:
                 code_gen = response['code_gen']
                 if code_gen is not None:
