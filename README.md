@@ -168,6 +168,7 @@ Useful examples of how a project can be used. Link to more resources, Additional
 - [ ] Multi-language Support
     - [ ] English
     - [ ] Chinese
+- [ ] Replace with Official API once released
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
