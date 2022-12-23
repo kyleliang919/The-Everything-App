@@ -96,10 +96,9 @@ OpenAI just released chatGPT. It can do many amazing things. But it comes some l
 
 
 ### Built With
-
-major frameworks/libraries used:
-
+* ChatGPT
 * Selenium
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,15 +129,15 @@ Installing and setting up your app.
    pip install -r requirements.txt
    ```
 3. Setting up your app credientials in a yaml file, for example
-  ```yaml
-  twitter:
-    consumer_key: YOUR_CONSUMER_KEY
-    consumer_secret: YOUR_CONSUMER_SECRET
-    access_token: YOUR_ACCESS_TOKEN
-    access_token_secret: YOUR_ACESS_TOKEN_SECRET
-    client_id: YOUR_CLIENT_ID
-    client_secret: YOUR_CLIENT-SECRET
-  ```
+   ```yaml
+   twitter:
+     consumer_key: YOUR_CONSUMER_KEY
+     consumer_secret: YOUR_CONSUMER_SECRET
+     access_token: YOUR_ACCESS_TOKEN
+     access_token_secret: YOUR_ACESS_TOKEN_SECRET
+     client_id: YOUR_CLIENT_ID
+     client_secret: YOUR_CLIENT-SECRET
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
