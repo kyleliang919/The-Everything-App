@@ -32,7 +32,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="logo.jpg" alt="Logo" width="120" height="120">
+    <img src="logo.jpeg" alt="Logo" width="120" height="120">
   </a>
 
   <h3 align="center">The Everything App</h3>
