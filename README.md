@@ -86,7 +86,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-OpenAI just released chatGPT. It can do many amazing things. But it comes some limitation: it doesn't have access to open internet, hence it only knows what it knows; It knows how to do things but it can't actually do it for you; This explorative project aims to:
+OpenAI just released chatGPT. It can do many amazing things. But it comes with some limitation: it doesn't have access to open internet, hence it only knows what it knows; It knows how to do things but it can't actually do it for you; This explorative project aims to:
 * provide an interface to interact with chatGPT programatically
 * give chatgpt the ability to interact with the real world (through exisiting or imaginary App APIs, which we will build)
 
