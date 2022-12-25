@@ -1,6 +1,7 @@
 import time
 import random
 import warnings
+import copy
 import undetected_chromedriver as uc
 
 class Chatbot(object):
@@ -32,17 +33,18 @@ class Chatbot(object):
     def verify_response_loading(self):
         last_page_source = self.driver.page_source
         while True:
-            time.sleep(1) # This time is necessary because Ajax response, in case the response is not fully generated, 2 minutes should be generous enough
+            time.sleep(1) # This time is necessary because of Ajax response, in case the response is not fully generated, 2 minutes should be generous enough
             if len(self.driver.page_source) != len(last_page_source):
+                last_page_source = copy.copy(self.driver.page_source)
                 continue
             else:
                 break
 
     def get_chat_response(self, prompt):
+        response = {"message": None, "code_gen": None, "list_gen": None}
         if len(prompt) == 0:
             response["message"] = "Please input nonempty prompt!"
             return response
-        response = {"message": None, "code_gen": None, "list_gen": None}
         self.get_textarea_and_button()
         try:
             self.textarea.send_keys(prompt)
