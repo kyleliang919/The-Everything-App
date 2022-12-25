@@ -13,7 +13,7 @@ class Chatbot(object):
         self.button = None
         while self.button is None and self.textarea is None:
             self.verify_login()
-            time.sleep(random.randint(2, 10))
+            time.sleep(3)
 
     def get_textarea_and_button(self):
         try:
@@ -54,7 +54,8 @@ class Chatbot(object):
             latest_xpath_prefix = "/html/body/div/div/div[1]/main/div[1]/div/div/div/div" + f"[{total_num}]"
             list_of_code_gen = self.driver.find_elements("xpath", latest_xpath_prefix + "//pre")
             if len(list_of_code_gen) == 0:
-                response["message"] = self.driver.find_elements("xpath", latest_xpath_prefix + "//p")[0].text
+                texts = self.driver.find_elements("xpath", latest_xpath_prefix + "//p")
+                response["message"] = "\n".join([each.text for each in texts])
             elif len(list_of_code_gen) == 1:
                 code_gen = "# " + self.driver.find_elements("xpath", latest_xpath_prefix + "//pre")[0].text
                 response["code_gen"] = code_gen
