@@ -13,12 +13,15 @@ def parse_app_name(bot):
     return re.sub(r'\W+', '', response).lower()
 
 def parse_app_keys(bot):
-    missing_key_list = bot.get_chat_response("Answer in a list of keys' names only: What keys were missing in the script?")['list_gen']
+    missing_key_list = bot.get_chat_response("Answer in a list format: What keys were missing in the script?")['list_gen']
     return missing_key_list
 
 def parse_and_execute(code_gen, credentials, bot):
     app_name = parse_app_name(bot)
     missing_key_list = parse_app_keys(bot)
+    if missing_key_list is None:
+        warnings.warn(f"chatgpt: Can not correctly identify missing keys, please try another prompt.")
+        return False
     if app_name in dir(apps):
         if app_name not in credentials:
             filled_code = None
