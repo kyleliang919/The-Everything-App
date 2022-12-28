@@ -84,7 +84,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="example.png" width="240" height="120">
+<img src="example.png" width="300" height="120">
 
 OpenAI just released chatGPT. It can do many amazing things. But it comes with some limitation: it doesn't have access to open internet, hence it only knows what it knows; It knows how to do things but it can't actually do it for you; This explorative project aims to:
 * provide an interface to interact with chatGPT programatically
