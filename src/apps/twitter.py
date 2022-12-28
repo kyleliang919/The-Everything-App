@@ -5,7 +5,7 @@ def twitter(code_gen, credientials, missing_key_list):
     # Making sure the all the keys are provided by the users in the yaml file
     unprovided_keys = []
     for each in missing_key_list:
-        key = each.lower()
+        key = each.lower().removeprefix("your_")
         if key not in credientials:
             unprovided_keys.append(key)
     if len(unprovided_keys) > 0:
