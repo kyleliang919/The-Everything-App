@@ -30,6 +30,18 @@ def main():
         if prompt == "exit":
             print("your conversation with chatgpt has ended.")
             break
+        elif prompt == "print codegen":
+            try:
+                if response['code_gen'] is not None:
+                    print(response['code_gen'])
+            except:
+                warnings.warn("chatgpt: there was no code generation.")
+        elif prompt == "print keys":
+            try:
+                if response['list_gen'] is not None:
+                    print(response['list_gen'])
+            except:
+                warnings.warn("chatgpt: there was no code generation.")
         else:
             response = bot.get_chat_response(prompt)
             if response['message'] is None:

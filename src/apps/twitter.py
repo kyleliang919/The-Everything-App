@@ -15,6 +15,6 @@ def twitter(code_gen, credientials, missing_key_list):
     
     # Start parsing
     for each in missing_key_list:
-        key = each.lower()
+        key = each.lower().removeprefix("your_")
         code_gen = re.sub(re.escape(key + " = ") + r"\"(.*?)\"", key + " = " + "\"" + credientials[key] + "\"", code_gen)
     return code_gen
