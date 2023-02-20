@@ -1,1 +1,1 @@
-from .chatbot import Chatbot
+from .chatbot import ChatbotWrapper

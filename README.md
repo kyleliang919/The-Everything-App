@@ -132,6 +132,9 @@ Installing and setting up your app.
    ```
 3. Setting up your app credientials in a yaml file, for example
    ```yaml
+  openai:
+    email: YOUR_EMAIL
+    password: YOUR_PASSWORD
    twitter:
      consumer_key: YOUR_CONSUMER_KEY
      consumer_secret: YOUR_CONSUMER_SECRET
@@ -152,7 +155,10 @@ Useful examples of how a project can be used. Link to more resources, Additional
 ```python
   python src/main.py --yaml <path_to_yaml>
 ```
-[Documentation]() is work in progress.
+
+## Useful Commands and Prompt Templates:
+* Answer in code only: with API, things you want to do: This will prompt chatgpt to generate API python calls
+* run it: run the code generated, it only works only if the last command generated python code
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

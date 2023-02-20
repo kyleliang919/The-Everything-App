@@ -1,1 +1,3 @@
-git+https://github.com/ultrafunkamsterdam/undetected-chromedriver.git
+revChatGPT
+pyyaml
+tweepy
