@@ -131,18 +131,18 @@ Installing and setting up your app.
    pip install -r requirements.txt
    ```
 3. Setting up your app credientials in a yaml file, for example
-   ```yaml
-  openai:
-    email: YOUR_EMAIL
-    password: YOUR_PASSWORD
-   twitter:
-     consumer_key: YOUR_CONSUMER_KEY
-     consumer_secret: YOUR_CONSUMER_SECRET
-     access_token: YOUR_ACCESS_TOKEN
-     access_token_secret: YOUR_ACESS_TOKEN_SECRET
-     client_id: YOUR_CLIENT_ID
-     client_secret: YOUR_CLIENT-SECRET
-   ```
+  ```yaml
+    openai:
+      email: YOUR_EMAIL
+      password: YOUR_PASSWORD
+    twitter:
+      consumer_key: YOUR_CONSUMER_KEY
+      consumer_secret: YOUR_CONSUMER_SECRET
+      access_token: YOUR_ACCESS_TOKEN
+      access_token_secret: YOUR_ACESS_TOKEN_SECRET
+      client_id: YOUR_CLIENT_ID
+      client_secret: YOUR_CLIENT-SECRET
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
