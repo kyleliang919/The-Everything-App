@@ -167,7 +167,7 @@ Useful examples of how a project can be used. Link to more resources, Additional
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Basic functionality of chatgpt API via mock browser
+- [x] Basic functionality of chatgpt
 - [x] First App integrated with limited functionalities
 - [ ] Basic documentations
 - [ ] Auto authentications
