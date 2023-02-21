@@ -22,7 +22,12 @@ class ChatbotWrapper(object):
                 conversation_id=self.chatbot.config.get("conversation"),
                 parent_id=self.chatbot.config.get("parent_id"),
             )
-            response["message"] = [each for each in raw_response][-1]["message"]
+            raw_response = [each for each in raw_response]
+            if len(raw_response) == 0:
+                response["message"] = "I am currently not avaliable, please check back later."
+                
+            else:
+                response["message"] = raw_response[-1]["message"]
             try:
                 response["code_gen"] = re.search('```python\n((.|\n)*)```', response["message"]).group(1)
             except:
