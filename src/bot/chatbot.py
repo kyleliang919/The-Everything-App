@@ -4,7 +4,6 @@ import warnings
 import copy
 from revChatGPT.V1 import Chatbot
 import re
-import apps
 
 class ChatbotWrapper(object):
     def __init__(self, credentials):
@@ -41,7 +40,7 @@ class ChatbotWrapper(object):
             warnings.warn(f"chatgpt: no code generation is detected.")
             return
         app_name = self.parse_app_name()
-        if app_name in dir(apps):
+        if app_name in self.credentials.keys():
             if app_name not in self.credentials:
                 filled_code = None
             else:
