@@ -45,17 +45,21 @@ class ChatbotWrapper(object):
             if app_name not in self.credentials:
                 filled_code = None
             else:
-                filled_code = self.get_chat_response("Replace keys in the code with values in the following dictionary:"+str(self.credentials["twitter"]))["code_gen"]
+                filled_code = self.get_chat_response("Replace keys in the code with values in the following dictionary:"+str(self.credentials[app_name]))["code_gen"]
         else:
             warnings.warn(f"chatgpt: This app has not been supported! You are welcome to contribute to the repo by adding the app.")
             return
-        if filled_code is not None:
-            try:
-                exec(filled_code)
-                warnings.warn(f"chatgpt: code executed, please check app for results")
-                return
-            except:
-                warnings.warn(f"chatgpt: execution failed, please make sure all credientials are correctly input in the yaml file.")
-                return 
 
+        for i in range(3):
+            print("chatgpt:\n"+filled_code)
+            if filled_code is not None:
+                try:
+                    exec(filled_code)
+                    print(f"chatgpt: code executed, please check app for results")
+                    return
+                except Exception as e:
+                    filled_code = self.get_chat_response("fix the error:" + str(e))["code_gen"]
+                    print(f"chatgpt: execution failed, retrying " + str(i) + "th times")
+                    if i == 2:
+                        return
         

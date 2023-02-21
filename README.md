@@ -99,8 +99,6 @@ OpenAI just released chatGPT. It can do many amazing things. But it comes with s
 
 ### Built With
 * ChatGPT
-* Selenium
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -159,6 +157,7 @@ Useful examples of how a project can be used. Link to more resources, Additional
 ## Useful Commands and Prompt Templates:
 * Answer in code only: with API, things you want to do: This will prompt chatgpt to generate API python calls
 * run it: run the code generated, it only works only if the last command generated python code
+* exit: quiting the chatbot
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
