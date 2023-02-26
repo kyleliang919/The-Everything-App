@@ -66,4 +66,3 @@ class ChatbotWrapper(object):
                     print(f"chatgpt: execution failed, retrying " + str(i) + "th times")
                     if i == 2:
                         return
-        

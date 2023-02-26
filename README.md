@@ -155,9 +155,19 @@ Useful examples of how a project can be used. Link to more resources, Additional
 ```
 
 ## Useful Commands and Prompt Templates:
-* Answer in python code only: with API, things you want to do: This will prompt chatgpt to generate API python calls
-* run it: run the code generated, it only works only if the last command generated python code
-* exit: quiting the chatbot
+<details>
+<summary>Answer in python code only: with API, things you want to do</summary>
+This will prompt chatgpt to generate API python calls 
+</details>
+<details>
+<summary>run it</summary> 
+run the code generated, it only works only if the last command generated python code
+</details>
+<summary>
+exit
+</summary>
+quiting the chatbot
+<details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,8 +178,7 @@ Useful examples of how a project can be used. Link to more resources, Additional
 
 - [x] Basic functionality of chatgpt
 - [x] First App integrated with limited functionalities
-- [ ] Basic documentations
-- [ ] Auto authentications
+- [x] Basic documentations
 - [ ] Supporting more apps
 - [ ] Multi-language Support
     - [ ] English
