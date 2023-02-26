@@ -163,11 +163,12 @@ This will prompt chatgpt to generate API python calls
 <summary>run it</summary> 
 run the code generated, it only works only if the last command generated python code
 </details>
+<details>
 <summary>
 exit
 </summary>
 quiting the chatbot
-<details>
+</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
