@@ -15,7 +15,7 @@ class ChatbotWrapper(object):
         response = self.get_chat_response("Answer in a single word, What App could finish the following task: " + prompt, internal_call = True)['message'] 
         return re.sub(r'\W+', '', response).lower() 
 
-    def get_chat_response(self, prompt, app = "", internal_call = False,):
+    def get_chat_response(self, prompt, app = "", internal_call = False):
         response = {"message": None, "code_gen": None, "list_gen": None}
         if len(prompt) == 0:
             response["message"] = "Please input nonempty prompt!"
@@ -52,16 +52,8 @@ class ChatbotWrapper(object):
         if self.code_buffer is None:
             warnings.warn(f"chatgpt: no code generation is detected.")
             return
-        app_name = self.parse_app_name()
-        if app_name in self.credentials.keys():
-            if app_name not in self.credentials:
-                filled_code = None
-            else:
-                filled_code = self.get_chat_response("Replace keys in the code with values in the following dictionary:"+str(self.credentials[app_name]))["code_gen"]
-        else:
-            warnings.warn(f"chatgpt: This app has not been supported! You are welcome to contribute to the repo by adding the app.")
-            return
 
+        filled_code = self.code_buffer
         for i in range(3):
             print("chatgpt:\n"+filled_code)
             if filled_code is not None:
