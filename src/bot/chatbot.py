@@ -11,14 +11,22 @@ class ChatbotWrapper(object):
         self.code_buffer = None
         self.credentials = credentials
 
-    def get_chat_response(self, prompt, internal_call = False):
+    def parse_app_name_updated(self, prompt):
+        response = self.get_chat_response("Answer in a single word, What App could finish the following task: " + prompt, internal_call = True)['message'] 
+        return re.sub(r'\W+', '', response).lower() 
+
+    def get_chat_response(self, prompt, app = "", internal_call = False,):
         response = {"message": None, "code_gen": None, "list_gen": None}
         if len(prompt) == 0:
             response["message"] = "Please input nonempty prompt!"
             return response
         else:
+            updated_prompt = prompt 
+            if len(app) > 0 and app in self.credentials.keys():
+                prefix = "Use " + str(self.credentials[app])
+                updated_prompt = prefix + " to generate a python api call to " + prompt
             raw_response = self.chatbot.ask(
-                prompt,
+                updated_prompt,
                 conversation_id=self.chatbot.config.get("conversation"),
                 parent_id=self.chatbot.config.get("parent_id"),
             )
