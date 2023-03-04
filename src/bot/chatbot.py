@@ -12,7 +12,7 @@ class ChatbotWrapper(object):
         self.credentials = credentials
 
     def parse_app_name_updated(self, prompt):
-        response = self.get_chat_response("Answer in a single word, What App could finish the following task: " + prompt, internal_call = True)['message'] 
+        response = self.get_chat_response("Answer in a single word, What App could finish the following task: " + prompt + " in the following apps " + str(self.credentials.keys()), internal_call = True)['message'] 
         return re.sub(r'\W+', '', response).lower() 
 
     def get_chat_response(self, prompt, app = "", internal_call = False):

@@ -33,6 +33,7 @@ def main():
             bot.parse_and_execute()
         else:
             app = bot.parse_app_name_updated(prompt)
+            print(app)
             response = bot.get_chat_response(prompt, app)
             if response['message'] is None:
                 warnings.warn(f"Error: {response['message']}")
