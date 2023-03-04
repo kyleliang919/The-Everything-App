@@ -140,6 +140,12 @@ Installing and setting up your app.
       access_token_secret: YOUR_ACESS_TOKEN_SECRET
       client_id: YOUR_CLIENT_ID
       client_secret: YOUR_CLIENT-SECRET
+    gmail:
+      sender_email : YOUR_EMAIL
+      sender_password : YOUR_PASSWORD
+      receiver_email : RECEIVER_EMAIL
+      subject : YOUR_SUBJECT
+      body : YOUR_EMAIL_BODY
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -153,6 +159,16 @@ Useful examples of how a project can be used. Link to more resources, Additional
 ```python
   python src/main.py --yaml <path_to_yaml>
 ```
+
+App-specific usage:
+- OpenAI: Sign up an OpenAI account, and fill in your password in the yaml.
+- Twitter: Register a client and fill in required items in the yaml.
+- Gmail:
+  You will need to generate Google App passward for gmail, and fill it in `sender_password` in the yaml. 
+  
+  Please refer to `Create & use App Passwords` section on  `https://support.google.com/accounts/answer/185833?hl=en`.
+
+  When sending emails using ChatGPT, please use this prompt: "Write an email from xx to xx using stmi gmail package."
 
 ## Useful Commands and Prompt Templates:
 <details>
