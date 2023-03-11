@@ -146,6 +146,8 @@ Installing and setting up your app.
       receiver_email : RECEIVER_EMAIL
       subject : YOUR_SUBJECT
       body : YOUR_EMAIL_BODY
+    youtube:
+      api_key : YOUR_API_KEY
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -169,7 +171,13 @@ App-specific usage:
   Please refer to `Create & use App Passwords` section on  `https://support.google.com/accounts/answer/185833?hl=en`.
 
   When sending emails using ChatGPT, please use this prompt: "Write an email from xx to xx using stmi gmail package."
+- 
+  Youtube uses Youtube Data API V3 package. You need to install `pip install google-api-python-client`
+  and login to your google cloud console `https://console.cloud.google.com/projectselector2/apis/credentials?supportedpurview=project`. Press `Create Project` then `create credential` and add a new `Api_key`. Copy the generated `api_key` to the Yaml.
 
+  Then if you saw 400 error while running the code, go back to your gogole cloud console and click `Eable API Services` and look for `YouTube Data API v3` in the filter, and click enable app. 
+
+  reference: `https://developers.google.com/youtube/registering_an_application`
 ## Useful Commands and Prompt Templates:
 <details>
 <summary>Answer in python code only: with API, things you want to do</summary>
