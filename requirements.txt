@@ -1,3 +1,5 @@
 revChatGPT
 pyyaml
 tweepy
+python-facebook-api
+openai
