@@ -2,12 +2,14 @@ import time
 import random
 import warnings
 import copy
+import openai
 from revChatGPT.V1 import Chatbot
 import re
 
 class ChatbotWrapper(object):
     def __init__(self, credentials):
-        self.chatbot = Chatbot(config=credentials["openai"])
+        openai.api_key = credentials["openai"]["api_key"]
+        openai.organization = credentials["openai"]["organization"]
         self.code_buffer = None
         self.credentials = credentials
 
@@ -25,19 +27,21 @@ class ChatbotWrapper(object):
             if len(app) > 0 and app in self.credentials.keys():
                 prefix = "Use " + str(self.credentials[app])
                 updated_prompt = prefix + " to generate a python api call to " + prompt
-            raw_response = self.chatbot.ask(
-                updated_prompt,
-                conversation_id=self.chatbot.config.get("conversation"),
-                parent_id=self.chatbot.config.get("parent_id"),
+            raw_response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": updated_prompt},
+                ]
             )
-            raw_response = [each for each in raw_response]
+            raw_response = [each["message"]["content"] for each in raw_response["choices"]]
             if len(raw_response) == 0:
                 response["message"] = "I am currently not avaliable, please check back later."
-                
             else:
-                response["message"] = raw_response[-1]["message"]
+                response["message"] = raw_response[-1]
             try:
                 response["code_gen"] = re.search('```python\n((.|\n)*)```', response["message"]).group(1)
+                if response["code_gen"] is None:
+                   response["code_gen"] = re.search('```((.|\n)*)```', response["message"]).group(1) 
             except:
                 pass
             if not internal_call:
