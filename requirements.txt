@@ -1,4 +1,3 @@
-revChatGPT
 pyyaml
 tweepy
 python-facebook-api

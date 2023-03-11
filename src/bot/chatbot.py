@@ -3,7 +3,6 @@ import random
 import warnings
 import copy
 import openai
-from revChatGPT.V1 import Chatbot
 import re
 
 class ChatbotWrapper(object):
