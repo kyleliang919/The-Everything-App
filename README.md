@@ -172,12 +172,16 @@ App-specific usage:
 
   When sending emails using ChatGPT, please use this prompt: "Write an email from xx to xx using stmi gmail package."
 - 
-  Youtube uses Youtube Data API V3 package. You need to install `pip install google-api-python-client`
+  Youtube: uses Youtube Data API V3 package. You need to install `pip install google-api-python-client`
   and login to your google cloud console `https://console.cloud.google.com/projectselector2/apis/credentials?supportedpurview=project`. Press `Create Project` then `create credential` and add a new `Api_key`. Copy the generated `api_key` to the Yaml.
 
   Then if you saw 400 error while running the code, go back to your gogole cloud console and click `Eable API Services` and look for `YouTube Data API v3` in the filter, and click enable app. 
 
   reference: `https://developers.google.com/youtube/registering_an_application`
+
+  - useful commands :
+    write python code to show me the most popular 10 videos on YouTube (using google app api).
+
 ## Useful Commands and Prompt Templates:
 <details>
 <summary>Answer in python code only: with API, things you want to do</summary>
